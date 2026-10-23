@@ -1,0 +1,288 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Main Page Grid */
+.dashboard {
+    min-height: 100vh;
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+    gap: 12px;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #1e3a8a;
+    color: white;
+
+    display: grid;
+    place-items: center;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #0f172a;
+    color: white;
+    padding: 25px 15px;
+}
+
+.sidebar h2 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 12px;
+}
+
+.sidebar a {
+    display: block;
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background-color: #334155;
+}
+
+/* Main Area */
+.main {
+    grid-area: main;
+    padding: 12px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto minmax(260px, auto) auto auto;
+    gap: 16px;
+    align-content: start;
+}
+
+/* Four Responsive Stat Cards */
+.stats {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 22px 15px;
+    border-radius: 10px;
+    border-left: 5px solid #2563eb;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    color: #64748b;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1d4ed8;
+    margin: 12px 0;
+}
+
+.stat-card span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Shared Panels */
+.panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #0000000d;
+    min-width: 0;
+}
+
+.panel h2 {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+/* Chart Takes Two Columns */
+.chart {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.chart > p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Simple Bar Chart */
+.chart-area {
+    height: 200px;
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #cbd5e1;
+
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.bar {
+    flex: 1;
+    max-width: 55px;
+    min-width: 0;
+    background: linear-gradient(#60a5fa, #2563eb);
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.bar span {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+/* Recent Activity Takes Two Rows */
+.activity {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.activity ul {
+    padding-left: 18px;
+}
+
+.activity li {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #475569;
+}
+
+/* Notice Takes Full Main Width */
+.notices {
+    grid-column: 1 / -1;
+    grid-row: span 1;
+    background-color: #eff6ff;
+    border-left: 5px solid #2563eb;
+}
+
+.notices p {
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+/* Students Table */
+.students {
+    grid-column: 1 / -1;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #eff6ff;
+    color: #1e3a8a;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #1e3a8a;
+    color: white;
+
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Phone Layout */
+@media screen and (max-width: 700px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px auto 1fr 50px;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 12px;
+    }
+
+    .sidebar nav {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 8px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .chart,
+    .activity,
+    .notices,
+    .students {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .chart-area {
+        height: 180px;
+    }
+}

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive school admin dashboard">
+    <title>School Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>School Dashboard</h1>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>School Admin</h2>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#students">Students</a>
+                <a href="#teachers">Teachers</a>
+                <a href="#reports">Reports</a>
+                <a href="#settings">Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main" id="overview">
+
+            <!-- Statistics Cards -->
+            <section class="stats">
+                <div class="stat-card">
+                    <h3>Students</h3>
+                    <p>1,250</p>
+                    <span>Enrolled students</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Teachers</h3>
+                    <p>85</p>
+                    <span>Teaching staff</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Classes</h3>
+                    <p>32</p>
+                    <span>Active classes</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Attendance</h3>
+                    <p>94%</p>
+                    <span>Today's attendance</span>
+                </div>
+            </section>
+
+            <!-- Monthly Result Chart -->
+            <section class="panel chart" id="reports">
+                <h2>Monthly Result Chart</h2>
+                <p>Student performance throughout the year</p>
+
+                <div class="chart-area">
+                    <div class="bar" style="height: 45%">
+                        <span>Jan</span>
+                    </div>
+                    <div class="bar" style="height: 65%">
+                        <span>Feb</span>
+                    </div>
+                    <div class="bar" style="height: 55%">
+                        <span>Mar</span>
+                    </div>
+                    <div class="bar" style="height: 80%">
+                        <span>Apr</span>
+                    </div>
+                    <div class="bar" style="height: 70%">
+                        <span>May</span>
+                    </div>
+                    <div class="bar" style="height: 95%">
+                        <span>Jun</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="panel activity">
+                <h2>Recent Activity</h2>
+                <ul>
+                    <li>New student registered</li>
+                    <li>Teacher attendance updated</li>
+                    <li>Monthly results uploaded</li>
+                    <li>Class schedule changed</li>
+                    <li>Parent meeting announced</li>
+                </ul>
+            </section>
+
+            <!-- Notice Panel -->
+            <section class="panel notices">
+                <h2>School Notices</h2>
+                <p>📢 Annual examinations will begin next Monday.</p>
+                <p>📅 Parent-teacher meeting is scheduled for Friday.</p>
+            </section>
+
+            <!-- Students Table -->
+            <section class="panel students" id="students">
+                <h2>Top Students</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ayesha Khan</td>
+                                <td>10th</td>
+                                <td>95</td>
+                            </tr>
+                            <tr>
+                                <td>Ali Ahmed</td>
+                                <td>9th</td>
+                                <td>91</td>
+                            </tr>
+                            <tr>
+                                <td>Sara Malik</td>
+                                <td>10th</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>Hamza Noor</td>
+                                <td>8th</td>
+                                <td>87</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 School Dashboard. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
